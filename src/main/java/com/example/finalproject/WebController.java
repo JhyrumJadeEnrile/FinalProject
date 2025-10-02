@@ -106,4 +106,10 @@ public class WebController {
     @GetMapping("/forgot-password")
     public String showForgotPasswordForm() {
         return "forgot-password";}
+
+
+    @GetMapping("/account-setting")
+    public String showAccountSettingPage(Model model) {
+        return "account-setting";
+    }
 }
