@@ -52,6 +52,9 @@ public class WebController {
     @GetMapping("/Studentindex")
     public String showStudentindexPage(Model model) { return "studentindex"; }
 
+
+
+
     @GetMapping("/Points")
     public String showDiscountCard(Model model) {
         model.addAttribute("discountValue", "30% OFF");
