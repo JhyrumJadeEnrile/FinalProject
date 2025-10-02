@@ -112,4 +112,9 @@ public class WebController {
     public String showAccountSettingPage(Model model) {
         return "account-setting";
     }
+
+    @GetMapping("/FAQ")
+    public String showFaqPage(Model model) {
+        return "faq";
+    }
 }
