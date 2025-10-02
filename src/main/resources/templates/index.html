@@ -125,7 +125,7 @@
               <span class="hide-menu">Chat</span>
             <li class="sidebar-item">
                 <a class="sidebar-link justify-content-between"
-                   href="#" aria-expanded="false">
+                   th:href="@{/Chat}" aria-expanded="false">
                     <div class="d-flex align-items-center gap-3">
                         <span class="d-flex">
                             <i class="ti ti-message-dots"></i>
@@ -216,7 +216,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                      <a th:href="@{/login}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>

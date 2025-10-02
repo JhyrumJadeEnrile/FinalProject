@@ -102,4 +102,8 @@ public class WebController {
 
     @GetMapping("/Chat")
     public String showChatPage(Model model) { return "chat"; }
+
+    @GetMapping("/forgot-password")
+    public String showForgotPasswordForm() {
+        return "forgot-password";}
 }
