@@ -38,6 +38,11 @@ public class WebController {
         return "students";
     }
 
+    @GetMapping("/Task")
+    public String showTasksPage(Model model) {
+        return "task";
+    }
+
     @GetMapping("/Points")
     public String showDiscountCard(Model model) {
         model.addAttribute("discountValue", "30% OFF");
