@@ -199,7 +199,7 @@
                                         <td th:text="${c.section}">A</td>
                                         <td th:text="${c.studentCount}">25</td>
                                         <td>
-                                            <a th:href="@{'/classes/' + ${c.id}}" class="btn btn-primary btn-sm">View</a>
+                                            <a th:href="@{/Output}" class="btn btn-primary btn-sm">View</a>
                                             <a th:href="@{'/classes/' + ${c.id} + '/edit'}" class="btn btn-outline-secondary btn-sm">Edit</a>
                                         </td>
                                     </tr>
@@ -208,7 +208,7 @@
                                         <td>C</td>
                                         <td>30</td>
                                         <td>
-                                            <a href="#" class="btn btn-primary btn-sm">View</a>
+                                            <a th:href="@{/Output}" class="btn btn-primary btn-sm">View</a>
                                             <a href="#" class="btn btn-outline-secondary btn-sm">Edit</a>
                                         </td>
                                     </tr>
