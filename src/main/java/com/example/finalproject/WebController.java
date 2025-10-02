@@ -23,6 +23,21 @@ public class WebController {
         return "authentication-register";
     }
 
+    @GetMapping("/Profile")
+    public String showProfilePage(Model model) {
+        return "user-profile";
+    }
+
+    @GetMapping("/Classes")
+    public String showClassesPage(Model model) {
+        return "classes";
+    }
+
+    @GetMapping("/Students")
+    public String showStudentsPage(Model model) {
+        return "students";
+    }
+
     @GetMapping("/Points")
     public String showDiscountCard(Model model) {
         model.addAttribute("discountValue", "30% OFF");

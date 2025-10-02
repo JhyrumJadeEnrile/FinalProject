@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Ranking | Flexy Admin</title>
+
+    <link rel="shortcut icon" type="image/png" th:href="@{/assets/images/logos/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/assets/css/styles.min.css}" />
+</head>
+
+<body>
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
+     data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+            <a th:href="@{/}" class="text-nowrap logo-img">
+
+            <img th:src="@{/assets/images/logos/logo.svg}" alt="logo" />
+            </a>
+            <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                <i class="ti ti-x fs-6"></i>
+            </div>
+        </div>
+
+        <!-- Sidebar navigation -->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+            <ul id="sidebarnav">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" th:href="@{/}" aria-expanded="false">
+                        <i class="ti ti-atom"></i>
+                        <span class="hide-menu">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" th:href="@{/Classes}" aria-expanded="false">
+                        <i class="ti ti-aperture"></i>
+                        <span class="hide-menu">Classes</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link active" th:href="@{/student-ranking}" aria-expanded="false">
+                        <i class="ti ti-trophy"></i>
+                        <span class="hide-menu">Student Ranking</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- Sidebar End -->
+
+    <!-- Main Wrapper -->
+    <div class="body-wrapper">
+
+        <!-- Header -->
+        <header class="app-header p-3 border-bottom">
+            <h4 class="mb-0">Student Ranking</h4>
+        </header>
+
+        <!-- Ranking Table -->
+        <div class="container-fluid py-6">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Class Ranking Board</h4>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered align-middle">
+                                    <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Rank</th>
+                                        <th scope="col">Student Name</th>
+                                        <th scope="col">Section</th>
+                                        <th scope="col">Grade</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <!-- Dynamic rows from controller -->
+                                    <tr th:each="s, stat : ${students}">
+                                        <td th:text="${stat.index + 1}">1</td>
+                                        <td th:text="${s.name}">John Doe</td>
+                                        <td th:text="${s.section}">Section A</td>
+                                        <td th:text="${s.grade}">98%</td>
+                                    </tr>
+
+                                    <!-- Fallback if students list is empty -->
+                                    <tr th:if="${students == null or #lists.isEmpty(students)}">
+                                        <td colspan="4" class="text-center text-muted">No students to display</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Export Buttons (placeholders) -->
+                            <div class="d-flex justify-content-end mt-3">
+                                <button class="btn btn-success me-2">
+                                    <i class="ti ti-file-export"></i> Export to Excel
+                                </button>
+                                <button class="btn btn-danger">
+                                    <i class="ti ti-file-type-pdf"></i> Export to PDF
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="py-6 px-6 text-center">
+            <p class="mb-0 fs-4">Design and Developed by
+                <a href="#" class="pe-1 text-primary text-decoration-underline">Wrappixel.com</a>
+                Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- Scripts -->
+<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/sidebarmenu.js}"></script>
+<script th:src="@{/assets/js/app.min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+</body>
+</html>
