@@ -113,12 +113,12 @@
               <span class="hide-menu">Apps</span>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link justify-content-between has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <a class="sidebar-link justify-content-between" th:href="@{/Points}" aria-expanded="false">
                 <div class="d-flex align-items-center gap-3">
                   <span class="d-flex">
                     <i class="ti ti-basket"></i>
                   </span>
-                  <span class="hide-menu">Events</span>
+                  <span class="hide-menu">Points</span>
                 </div>
                 
               </a>
@@ -322,7 +322,7 @@
                       <i class="ti ti-list-check fs-6"></i>
                       <p class="mb-0 fs-3">My Task</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                      <a th:href="@{/login}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                   </div>
                 </div>
               </li>

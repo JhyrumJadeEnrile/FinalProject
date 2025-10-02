@@ -23,7 +23,7 @@ public class WebController {
         return "authentication-register";
     }
 
-    @GetMapping("/discount")
+    @GetMapping("/Points")
     public String showDiscountCard(Model model) {
         model.addAttribute("discountValue", "30% OFF");
         model.addAttribute("couponCode", "UPGRADE30");
