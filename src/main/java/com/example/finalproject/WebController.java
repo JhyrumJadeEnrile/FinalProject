@@ -90,4 +90,8 @@ public class WebController {
     public String showUiTypography(Model model) {
         return "ui-typography";
     }
+
+    @GetMapping("/forgot-password")
+    public String showForgotPasswordForm() {
+        return "forgot-password";}
 }
