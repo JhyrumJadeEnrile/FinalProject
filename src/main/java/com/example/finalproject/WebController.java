@@ -43,6 +43,15 @@ public class WebController {
         return "task";
     }
 
+    @GetMapping("/Output")
+    public String showOutputPage(Model model) { return "output"; }
+
+    @GetMapping("/Uiforms")
+    public String showUiformsPage(Model model) { return "ui-forms"; }
+
+    @GetMapping("/Studentindex")
+    public String showStudentindexPage(Model model) { return "studentindex"; }
+
     @GetMapping("/Points")
     public String showDiscountCard(Model model) {
         model.addAttribute("discountValue", "30% OFF");
@@ -90,4 +99,7 @@ public class WebController {
     public String showUiTypography(Model model) {
         return "ui-typography";
     }
+
+    @GetMapping("/Chat")
+    public String showChatPage(Model model) { return "chat"; }
 }
