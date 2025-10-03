@@ -136,4 +136,10 @@ public class WebController {
     public String showUiEditScore(Model model) {
         return "editscore";
     }
+
+
+    @GetMapping("/editclass")
+    public String showUiEditClass(Model model) {
+        return "editclass";
+    }
 }
