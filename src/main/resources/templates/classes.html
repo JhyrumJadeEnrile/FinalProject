@@ -26,7 +26,105 @@
             </div>
             <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
                 <ul id="sidebarnav">
-                    <!-- Sidebar items here -->
+                    <li class="nav-small-cap">
+                        <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+                        <span class="hide-menu">Home</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" th:href="@{/}" aria-expanded="false">
+                            <i class="ti ti-atom"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between active"
+                           th:href="@{/Classes}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-clipboard-list"></i>
+                  </span>
+                                <span class="hide-menu">Classes</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Students}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-shirt"></i>
+                  </span>
+                                <span class="hide-menu">Students </span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Task}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-notebook"></i>
+                  </span>
+                                <span class="hide-menu">Tasks</span>
+                            </div>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="sidebar-divider lg"></span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Profile}"
+                           aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-user-circle"></i>
+                  </span>
+                                <span class="hide-menu">User Profile</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Chat}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                        <span class="d-flex">
+                            <i class="ti ti-message-dots"></i>
+                        </span>
+                                <span class="hide-menu">Chat</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/FAQ}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-help"></i>
+                  </span>
+                                <span class="hide-menu">FAQ</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/account-setting}"
+                           aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-user-circle"></i>
+                  </span>
+                                <span class="hide-menu">Account Setting</span>
+                            </div>
+
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -44,7 +142,29 @@
                 </ul>
                 <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
                     <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-                        <!-- Profile dropdown here -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                <img th:src="@{/assets/images/profile/user-1.jpg}" alt="" width="35" height="35" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                                <div class="message-body">
+                                    <a th:href="@{/Profile}" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-user fs-6"></i>
+                                        <p class="mb-0 fs-3">My Profile</p>
+                                    </a>
+                                    <a th:href="@{/account-setting}" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-settings fs-6"></i>
+                                        <p class="mb-0 fs-3">Account Setting</p>
+                                    </a>
+                                    <a th:href="@{/Task}" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-list-check fs-6"></i>
+                                        <p class="mb-0 fs-3">My Task</p>
+                                    </a>
+                                    <a th:href="@{/login}" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -66,7 +186,6 @@
                             <div class="card-body">
                                 <h5 class="card-title fw-semibold mb-3">All Classes</h5>
 
-                                <!-- 🔎 Search Bar -->
                                 <div class="mb-3">
                                     <input type="text" id="searchInput" class="form-control" placeholder="Search for classes...">
                                 </div>
@@ -124,7 +243,6 @@
 <script th:src="@{/assets/libs/simplebar/dist/simplebar.js}"></script>
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-<!-- 🔎 Search Script -->
 <script>
     document.getElementById('searchInput').addEventListener('keyup', function () {
         let filter = this.value.toLowerCase();

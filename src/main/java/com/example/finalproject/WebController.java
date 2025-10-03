@@ -120,4 +120,9 @@ public class WebController {
     public String showFaqPage(Model model) {
         return "faq";
     }
+
+    @GetMapping("/notes")
+    public String showUiNotes(Model model) {
+        return "notes";
+    }
 }
