@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Edit Group Scores | Teacher Dashboard</title>
+
+    <link rel="shortcut icon" type="image/png" th:href="@{/assets/images/logos/favicon.png}" />
+    <link rel="stylesheet" th:href="@{/assets/css/styles.min.css}" />
+</head>
+
+<body>
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6"
+     data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+
+    <aside class="left-sidebar">
+        <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+                <a th:href="@{/}" class="text-nowrap logo-img">
+                    <img th:src="@{/assets/images/logos/logo.jpg}" alt="" />
+                </a>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                    <i class="ti ti-x fs-6"></i>
+                </div>
+            </div>
+            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                <ul id="sidebarnav">
+                    <li class="nav-small-cap">
+                        <iconify-icon icon="solar:menu-dots-linear" class="nav-small-cap-icon fs-4"></iconify-icon>
+                        <span class="hide-menu">Home</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" th:href="@{/}" aria-expanded="false">
+                            <i class="ti ti-atom"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between active"
+                           th:href="@{/Classes}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-clipboard-list"></i>
+                  </span>
+                                <span class="hide-menu">Classes</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Students}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-shirt"></i>
+                  </span>
+                                <span class="hide-menu">Students </span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Task}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-notebook"></i>
+                  </span>
+                                <span class="hide-menu">Tasks</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <span class="sidebar-divider lg"></span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Profile}"
+                           aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-user-circle"></i>
+                  </span>
+                                <span class="hide-menu">User Profile</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/Chat}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                        <span class="d-flex">
+                            <i class="ti ti-message-dots"></i>
+                        </span>
+                                <span class="hide-menu">Chat</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/FAQ}" aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-help"></i>
+                  </span>
+                                <span class="hide-menu">FAQ</span>
+                            </div>
+
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link justify-content-between"
+                           th:href="@{/account-setting}"
+                           aria-expanded="false">
+                            <div class="d-flex align-items-center gap-3">
+                  <span class="d-flex">
+                    <i class="ti ti-settings"></i>
+                  </span>
+                                <span class="hide-menu">Account Setting</span>
+                            </div>
+
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="body-wrapper">
+
+        <div class="container-fluid py-6">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-4">Edit Group Scores: Midterm Project</h4>
+                            <p class="text-muted mb-4">Modify existing scores for the selected assignment.</p>
+
+                            <form th:action="@{/editscore}" method="post">
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <label for="assignmentSelect" class="form-label fw-bold">Select Assignment/Output</label>
+                                        <select class="form-select" id="assignmentSelect" required>
+                                            <option value="1" selected>Midterm Project (Group A)</option>
+                                            <option value="2">Final Presentation (Group B)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="maxPoints" class="form-label fw-bold">Max Points</label>
+                                        <input type="text" class="form-control" id="maxPoints" value="100" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered align-middle table-striped">
+                                        <thead class="table-dark">
+                                        <tr>
+                                            <th scope="col">Student ID</th>
+                                            <th scope="col">Student Name</th>
+                                            <th scope="col">Current Score</th>
+                                            <th scope="col">New Score Input</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>S101</td>
+                                            <td>Alice Johnson</td>
+                                            <td>95</td>
+                                            <td>
+                                                <input type="number"
+                                                       name="score_S101"
+                                                       value="95"
+                                                       class="form-control form-control-sm"
+                                                       min="0" max="100">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>S105</td>
+                                            <td>Michael Brown</td>
+                                            <td>88</td>
+                                            <td>
+                                                <input type="number"
+                                                       name="score_S105"
+                                                       value="88"
+                                                       class="form-control form-control-sm"
+                                                       min="0" max="100">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>S112</td>
+                                            <td>Emily Davis</td>
+                                            <td>N/A</td>
+                                            <td>
+                                                <input type="number"
+                                                       name="score_S112"
+                                                       value=""
+                                                       class="form-control form-control-sm"
+                                                       min="0" max="100">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="d-flex justify-content-end mt-4">
+                                    <button type="submit" class="btn btn-primary shadow-sm">
+                                        <i class="ti ti-device-floppy me-1"></i> Save All Changes
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-6 px-6 text-center">
+            <p class="mb-0 fs-4">Design and Developed by
+                <a href="#" class="pe-1 text-primary text-decoration-underline">Wrappixel.com</a>
+                Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{/assets/libs/jquery/dist/jquery.min.js}"></script>
+<script th:src="@{/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/sidebarmenu.js}"></script>
+<script th:src="@{/assets/js/app.min.js}"></script>
+<script th:src="@{/assets/libs/simplebar/dist/simplebar.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+</body>
+</html>

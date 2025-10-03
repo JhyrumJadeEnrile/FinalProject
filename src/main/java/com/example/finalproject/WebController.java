@@ -125,4 +125,15 @@ public class WebController {
     public String showUiNotes(Model model) {
         return "notes";
     }
+
+    @GetMapping("/studentview")
+    public String showUiStudview(Model model) {
+        return "studentview";
+    }
+
+
+    @GetMapping("/editscore")
+    public String showUiEditScore(Model model) {
+        return "editscore";
+    }
 }
